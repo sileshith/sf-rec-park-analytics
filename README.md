@@ -1,8 +1,10 @@
 # SF Rec Park Permits & Reservations Analytics
 
 ![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)
-[![Streamlit deployment pending](https://img.shields.io/badge/Streamlit-deployment%20pending-FF4B4B?logo=streamlit&logoColor=white)](#streamlit-community-cloud)
+[![Streamlit live app](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sf-rec-park-analytics.streamlit.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+**[Open the live dashboard](https://sf-rec-park-analytics.streamlit.app/)** · [View source on GitHub](https://github.com/sileshith/sf-rec-park-analytics)
 
 ## Executive summary
 
@@ -267,14 +269,17 @@ environment because Docker is unavailable there.
 
 ### Streamlit Community Cloud
 
-The [public GitHub repository](https://github.com/sileshith/sf-rec-park-analytics)
-is published. Streamlit Community Cloud deployment is awaiting account sign-in;
-the deployment badge remains pending until a live app is verified.
+The dashboard is deployed publicly at **https://sf-rec-park-analytics.streamlit.app/**.
+Verified on October 23, 2026 in a separate browser session without the owner login:
+the bundled SQLite snapshot loads all 12,000 synthetic permits and the five tabs.
 
-Deploy using repository `sileshith/sf-rec-park-analytics`, branch `main`, entrypoint
-`app.py`, and Python 3.11 or 3.12 in advanced settings. The committed database and
-production requirements start the dashboard without a cloud ETL job. No secrets
-are needed for this demonstration. The [initial GitHub Actions run](https://github.com/sileshith/sf-rec-park-analytics/actions/runs/39988379923)
+Deployment source: repository `sileshith/sf-rec-park-analytics`, branch `main`,
+entrypoint `app.py`, Python 3.11. Streamlit rebuilds the app when this branch changes.
+The committed database and production requirements start the dashboard without a
+cloud ETL job. No secrets are needed. Community Cloud may put inactive apps to sleep;
+reopening the URL can require a short wake-up period.
+
+The [initial GitHub Actions run](https://github.com/sileshith/sf-rec-park-analytics/actions/runs/39988379923)
 passed on Python 3.11 and 3.12, including all tests and the PDF rebuild.
 
 ## Repository structure
