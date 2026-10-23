@@ -1,0 +1,12 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+.env
+.streamlit/secrets.toml
+*.sqlite-journal
+*.sqlite-shm
+*.sqlite-wal
+# The small synthetic CSV and reproducible SQLite snapshot are intentionally tracked.

@@ -1,0 +1,16 @@
+{
+  "synthetic": true,
+  "schema_version": 1,
+  "rows": 12000,
+  "seed": 1820,
+  "start": "2025-01-01",
+  "as_of": "2026-09-30",
+  "numpy_version": "2.3.5",
+  "pandas_version": "2.2.3",
+  "status_counts": {
+    "APPROVED": 10355,
+    "REJECTED": 1486,
+    "PENDING": 159
+  },
+  "assumptions": "Invented four-zone geography, fees, targets, seasonal intake, review lags, and approval rates. No official policy or operational observations."
+}

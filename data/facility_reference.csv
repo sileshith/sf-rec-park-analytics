@@ -1,0 +1,20 @@
+facility_id,source_property_id,facility_name,latitude,longitude,property_type,address,district_zone,source_data_as_of,source_url
+RPD-112,112,Yacht Harbor and Marina Green,37.80796275,-122.44119806,Regional Park,1 Marina Green Dr,North,2025-12-18T09:03:43.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-125,125,Hamilton Rec Center,37.78442364,-122.43601635,Neighborhood Park or Playground,1900 Geary Blvd,North,2025-12-18T09:04:01.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-132,132,Moscone Rec Center,37.80213066,-122.4331224,Neighborhood Park or Playground,1800 Chestnut St,North,2025-12-18T09:04:01.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-150,150,Joe DiMaggio Playground,37.80249695,-122.41216884,Neighborhood Park or Playground,651 Lombard Street,East,2025-12-18T09:04:01.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-164,164,Crocker Amazon Playground,37.7140419,-122.42928813,Regional Park,799 Moscow St,South,2026-05-01T03:31:01.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-172,172,Richmond Rec Center,37.78327503,-122.47798997,Neighborhood Park or Playground,251 18th Ave,West,2026-10-02T14:52:50.742,https://data.sf.gov/d/gtr9-ntp6
+RPD-28,28,John McLaren Park,37.71809698,-122.41908038,Regional Park,100 John F Shelley Dr,South,2026-05-01T03:31:12.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-31,31,St. Mary's Rec Center,37.73367487,-122.42067123,Neighborhood Park or Playground,95 Justin Dr,South,2025-12-18T09:05:20.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-52,52,Potrero Hill Rec Center,37.75614147,-122.39693963,Neighborhood Park or Playground,801 Arkansas St,East,2025-12-18T09:04:01.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-63,63,Mission Dolores Park,37.75975462,-122.42712797,Neighborhood Park or Playground,646 Dolores St,East,2025-12-18T09:05:20.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-66,66,Balboa Park,37.72495974,-122.44462514,Neighborhood Park or Playground,51 Havelock St,South,2025-12-18T09:05:04.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-756665,756665,Golden Gate Park - Section 1,37.77139097,-122.45529391,Regional Park,501 Stanyan St,West,2025-12-18T09:04:01.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-756666,756666,Golden Gate Park - Section 2,37.77090391,-122.46603321,Regional Park,501 Stanyan St,West,2025-12-18T09:04:01.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-756667,756667,Golden Gate Park - Section 3,37.76726835,-122.47039125,Regional Park,501 Stanyan St,West,2025-12-18T09:03:43.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-756668,756668,Golden Gate Park - Section 4,37.76889364,-122.4790922,Regional Park,501 Stanyan St,West,2025-12-18T09:04:01.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-756669,756669,Golden Gate Park - Section 5,37.76940891,-122.49130313,Regional Park,501 Stanyan St,West,2025-12-18T09:03:43.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-756670,756670,Golden Gate Park - Section 6,37.7677299,-122.50423848,Regional Park,501 Stanyan St,West,2025-12-18T09:03:17.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-93,93,Sunset Rec Center,37.75659386,-122.48685659,Neighborhood Park or Playground,2201 Lawton St,West,2025-12-18T09:04:42.000,https://data.sf.gov/d/gtr9-ntp6
+RPD-957231,957231,Golden Gate Park - Section 7,37.76845534,-122.46075895,Regional Park,501 Stanyan St,West,2025-12-18T09:03:17.000,https://data.sf.gov/d/gtr9-ntp6

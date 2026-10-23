@@ -1,0 +1,198 @@
+{
+  "source_api": "https://data.sf.gov/resource/gtr9-ntp6.json?$limit=5000",
+  "retrieved_date": "2026-10-23",
+  "source_record_count": 255,
+  "full_download_sha256": "b36f29d86828f197582dadfc0ee30b428ae83414ef0da61b8d622043edd9ac7a",
+  "records": [
+    {
+      "property_id": "112",
+      "property_name": "Yacht Harbor and Marina Green",
+      "latitude": "37.80796275",
+      "longitude": "-122.44119806",
+      "propertytype": "Regional Park",
+      "address": "1 Marina Green Dr",
+      "data_as_of": "2025-12-18T09:03:43.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "125",
+      "property_name": "Hamilton Rec Center",
+      "latitude": "37.78442364",
+      "longitude": "-122.43601635",
+      "propertytype": "Neighborhood Park or Playground",
+      "address": "1900 Geary Blvd",
+      "data_as_of": "2025-12-18T09:04:01.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "132",
+      "property_name": "Moscone Rec Center",
+      "latitude": "37.80213066",
+      "longitude": "-122.4331224",
+      "propertytype": "Neighborhood Park or Playground",
+      "address": "1800 Chestnut St",
+      "data_as_of": "2025-12-18T09:04:01.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "150",
+      "property_name": "Joe DiMaggio Playground",
+      "latitude": "37.80249695",
+      "longitude": "-122.41216884",
+      "propertytype": "Neighborhood Park or Playground",
+      "address": "651 Lombard Street",
+      "data_as_of": "2025-12-18T09:04:01.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "164",
+      "property_name": "Crocker Amazon Playground",
+      "latitude": "37.7140419",
+      "longitude": "-122.42928813",
+      "propertytype": "Regional Park",
+      "address": "799 Moscow St",
+      "data_as_of": "2026-05-01T03:31:01.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "172",
+      "property_name": "Richmond Rec Center",
+      "latitude": "37.78327503",
+      "longitude": "-122.47798997",
+      "propertytype": "Neighborhood Park or Playground",
+      "address": "251 18th Ave",
+      "data_as_of": "2026-10-02T14:52:50.742",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "28",
+      "property_name": "John McLaren Park",
+      "latitude": "37.71809698",
+      "longitude": "-122.41908038",
+      "propertytype": "Regional Park",
+      "address": "100 John F Shelley Dr",
+      "data_as_of": "2026-05-01T03:31:12.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "31",
+      "property_name": "St. Mary's Rec Center",
+      "latitude": "37.73367487",
+      "longitude": "-122.42067123",
+      "propertytype": "Neighborhood Park or Playground",
+      "address": "95 Justin Dr",
+      "data_as_of": "2025-12-18T09:05:20.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "52",
+      "property_name": "Potrero Hill Rec Center",
+      "latitude": "37.75614147",
+      "longitude": "-122.39693963",
+      "propertytype": "Neighborhood Park or Playground",
+      "address": "801 Arkansas St",
+      "data_as_of": "2025-12-18T09:04:01.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "63",
+      "property_name": "Mission Dolores Park",
+      "latitude": "37.75975462",
+      "longitude": "-122.42712797",
+      "propertytype": "Neighborhood Park or Playground",
+      "address": "646 Dolores St",
+      "data_as_of": "2025-12-18T09:05:20.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "66",
+      "property_name": "Balboa Park",
+      "latitude": "37.72495974",
+      "longitude": "-122.44462514",
+      "propertytype": "Neighborhood Park or Playground",
+      "address": "51 Havelock St",
+      "data_as_of": "2025-12-18T09:05:04.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "756665",
+      "property_name": "Golden Gate Park - Section 1",
+      "latitude": "37.77139097",
+      "longitude": "-122.45529391",
+      "propertytype": "Regional Park",
+      "address": "501 Stanyan St",
+      "data_as_of": "2025-12-18T09:04:01.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "756666",
+      "property_name": "Golden Gate Park - Section 2",
+      "latitude": "37.77090391",
+      "longitude": "-122.46603321",
+      "propertytype": "Regional Park",
+      "address": "501 Stanyan St",
+      "data_as_of": "2025-12-18T09:04:01.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "756667",
+      "property_name": "Golden Gate Park - Section 3",
+      "latitude": "37.76726835",
+      "longitude": "-122.47039125",
+      "propertytype": "Regional Park",
+      "address": "501 Stanyan St",
+      "data_as_of": "2025-12-18T09:03:43.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "756668",
+      "property_name": "Golden Gate Park - Section 4",
+      "latitude": "37.76889364",
+      "longitude": "-122.4790922",
+      "propertytype": "Regional Park",
+      "address": "501 Stanyan St",
+      "data_as_of": "2025-12-18T09:04:01.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "756669",
+      "property_name": "Golden Gate Park - Section 5",
+      "latitude": "37.76940891",
+      "longitude": "-122.49130313",
+      "propertytype": "Regional Park",
+      "address": "501 Stanyan St",
+      "data_as_of": "2025-12-18T09:03:43.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "756670",
+      "property_name": "Golden Gate Park - Section 6",
+      "latitude": "37.7677299",
+      "longitude": "-122.50423848",
+      "propertytype": "Regional Park",
+      "address": "501 Stanyan St",
+      "data_as_of": "2025-12-18T09:03:17.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "93",
+      "property_name": "Sunset Rec Center",
+      "latitude": "37.75659386",
+      "longitude": "-122.48685659",
+      "propertytype": "Neighborhood Park or Playground",
+      "address": "2201 Lawton St",
+      "data_as_of": "2025-12-18T09:04:42.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    },
+    {
+      "property_id": "957231",
+      "property_name": "Golden Gate Park - Section 7",
+      "latitude": "37.76845534",
+      "longitude": "-122.46075895",
+      "propertytype": "Regional Park",
+      "address": "501 Stanyan St",
+      "data_as_of": "2025-12-18T09:03:17.000",
+      "data_loaded_at": "2026-10-22T20:09:14.408"
+    }
+  ]
+}
