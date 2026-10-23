@@ -283,7 +283,7 @@ def build_report(database, output, author='Sileshi Hirpa', report_date='2026-10-
     # 10-13. Fresh captures of the deployed public dashboard.
     for number, (title, filename, anchor, caption, guide) in enumerate(VISUALS, 1):
         r.heading(f'Visual Appendix {number}: {title}', anchor)
-        r.paragraph(f'Captured from the public deployment on {SCREENSHOT_DATE}. All permit records are synthetic.', SMALL)
+        r.paragraph(f'Captured from the public deployment on {SCREENSHOT_DATE}. The sidebar includes the final PDF download button. All permit records are synthetic.', SMALL)
         r.screenshot(ROOT/'assets/screenshots/deployed'/filename)
         r.paragraph(f'<b>Figure {number}.</b> {caption}')
         r.heading('How to read this view')

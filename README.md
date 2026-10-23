@@ -143,14 +143,14 @@ Icon cards show selected volume, resolved turnaround, full-precision revenue, an
 pending backlog. Charts show status counts, category revenue, and decisions by
 month. Monthly decisions belong to the selected application cohort.
 
-<img src="assets/screenshots/deployed/executive-summary.png" alt="Executive KPI cards showing synthetic permit metrics" width="420">
+<img src="assets/screenshots/deployed/executive-summary.png" alt="Executive KPI cards and final PDF download button" width="420">
 
 ### Throughput and bottlenecks
 
 Compare completed turnaround with pending age by category or zone. Inspect the
 overdue queue, sorted by days over target, and download the selected records.
 
-<img src="assets/screenshots/deployed/throughput-bottlenecks.png" alt="District turnaround comparison and active bottleneck queue" width="420">
+<img src="assets/screenshots/deployed/throughput-bottlenecks.png" alt="Category turnaround comparison with final PDF download button" width="420">
 
 ### Filterable permit explorer
 
@@ -159,7 +159,7 @@ permit IDs, show overdue pending only, sort records, and export CSV. Search and
 overdue-only controls affect the explorer only. An unmatched search displays a
 warning; empty sidebar selections return no records.
 
-<img src="assets/screenshots/deployed/permit-explorer.png" alt="Searchable permit record explorer and CSV export" width="420">
+<img src="assets/screenshots/deployed/permit-explorer.png" alt="Searchable permit explorer with CSV export and final PDF download button" width="420">
 
 ### Facility demand map
 
@@ -167,11 +167,12 @@ Bubble area represents assigned synthetic permits or overdue pending cases.
 Hover for property details. Zero-count reference sites remain in the table and
 CSV download. Basemap tiles require internet; reference tables work locally.
 
-<img src="assets/screenshots/deployed/facility-demand.png" alt="Illustrative synthetic demand at authentic San Francisco property locations" width="420">
+<img src="assets/screenshots/deployed/facility-demand.png" alt="Synthetic facility demand map with final PDF download button" width="420">
 
 Screenshots were captured from the public deployment on October 23, 2026 at
 1280 x 720 pixels, with the complete synthetic snapshot selected. The same four
-images are embedded in the PDF visual appendix. Capture URLs, source commit,
+images are embedded in the PDF visual appendix. Every refreshed capture shows
+the **Download Final PDF Report** button in the sidebar. Capture URLs, source commit,
 filter state, and image hashes are recorded in
 `assets/screenshots/deployed/capture_manifest.json`. Images are reference captures,
 not a live data feed.
