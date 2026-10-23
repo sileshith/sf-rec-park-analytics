@@ -1,0 +1,17 @@
+{
+  "captured_date": "2026-10-23",
+  "app_url": "https://sf-rec-park-analytics.streamlit.app/",
+  "github_url": "https://github.com/sileshith/sf-rec-park-analytics",
+  "source_commit": "e46da2e",
+  "viewport_pixels": [
+    1280,
+    720
+  ],
+  "filters": "All dates, categories, zones and statuses; no ID search; overdue-only off; map measure assigned synthetic permits",
+  "images": {
+    "executive-summary.png": "0c38846801e2490a3d4680c29d0c821ea1737a19be977058003e3286a8ec1014",
+    "facility-demand.png": "7b68bf89d5918aba251d905151b2fc56035a4b13b4e4d09d0441c89764e6e7f9",
+    "permit-explorer.png": "5c6bfe1511d8e340ee41cf01f8b57651c68bb81b7452331a4aa6a0fe929c14d9",
+    "throughput-bottlenecks.png": "a38c3006aac8ddc1fec6135ffaafaf4824c745557075649b35d4f01678467656"
+  }
+}

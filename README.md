@@ -17,9 +17,9 @@ exploration for public sector analysts.
 sourced from DataSF. This is an independent portfolio project, not an official
 City application or assessment of SF Rec Park performance.
 
-[Read the nine-page project report](reports/sf_rec_park_project_report.pdf), with a
-clickable table of contents, computed results, limitations, recommendations, and
-all 19 reference properties. The report opening follows the supplied portfolio
+[Read the 13-page project report](reports/sf_rec_park_project_report.pdf), with a
+clickable table of contents, computed results, limitations, recommendations, all 19 reference properties, live deployment links, and four deployed dashboard
+visuals in a linked appendix. The report opening follows the supplied portfolio
 reference: navy cover border, serif title, blue section headings, and KPI tiles.
 
 ### Snapshot results
@@ -139,14 +139,14 @@ Icon cards show selected volume, resolved turnaround, full-precision revenue, an
 pending backlog. Charts show status counts, category revenue, and decisions by
 month. Monthly decisions belong to the selected application cohort.
 
-<img src="assets/screenshots/executive-summary.png" alt="Executive KPI cards showing synthetic permit metrics" width="420">
+<img src="assets/screenshots/deployed/executive-summary.png" alt="Executive KPI cards showing synthetic permit metrics" width="420">
 
 ### Throughput and bottlenecks
 
 Compare completed turnaround with pending age by category or zone. Inspect the
 overdue queue, sorted by days over target, and download the selected records.
 
-<img src="assets/screenshots/throughput-bottlenecks.png" alt="District turnaround comparison and active bottleneck queue" width="420">
+<img src="assets/screenshots/deployed/throughput-bottlenecks.png" alt="District turnaround comparison and active bottleneck queue" width="420">
 
 ### Filterable permit explorer
 
@@ -155,7 +155,7 @@ permit IDs, show overdue pending only, sort records, and export CSV. Search and
 overdue-only controls affect the explorer only. An unmatched search displays a
 warning; empty sidebar selections return no records.
 
-<img src="assets/screenshots/permit-explorer.png" alt="Searchable permit record explorer and CSV export" width="420">
+<img src="assets/screenshots/deployed/permit-explorer.png" alt="Searchable permit record explorer and CSV export" width="420">
 
 ### Facility demand map
 
@@ -163,10 +163,14 @@ Bubble area represents assigned synthetic permits or overdue pending cases.
 Hover for property details. Zero-count reference sites remain in the table and
 CSV download. Basemap tiles require internet; reference tables work locally.
 
-<img src="assets/screenshots/facility-demand.png" alt="Illustrative synthetic demand at authentic San Francisco property locations" width="420">
+<img src="assets/screenshots/deployed/facility-demand.png" alt="Illustrative synthetic demand at authentic San Francisco property locations" width="420">
 
-Screenshots capture the dashboard's responsive narrow layout. Wider screens place
-executive cards in columns. They are reference captures, not a live data feed.
+Screenshots were captured from the public deployment on October 23, 2026 at
+1280 x 720 pixels, with the complete synthetic snapshot selected. The same four
+images are embedded in the PDF visual appendix. Capture URLs, source commit,
+filter state, and image hashes are recorded in
+`assets/screenshots/deployed/capture_manifest.json`. Images are reference captures,
+not a live data feed.
 
 ## SLA framework and governance
 

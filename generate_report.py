@@ -1,4 +1,4 @@
-"""Build a nine-page portfolio report from SQLite with linked contents.
+"""Build a thirteen-page portfolio report from SQLite with linked contents.
 
 Install requirements-report.txt, then run python generate_report.py.
 All results are read from the database on each build. Fixed page templates keep
@@ -13,6 +13,7 @@ from pathlib import Path
 import sqlite3
 
 from reportlab.pdfgen import canvas
+from reportlab.lib.utils import ImageReader
 from reportlab.lib import colors
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import Paragraph, Table, TableStyle
@@ -29,7 +30,24 @@ PALE = colors.HexColor('#f2f5f9')
 GRAY = colors.HexColor('#596d88')
 BODY = ParagraphStyle('Body', fontName='Times-Roman', fontSize=11, leading=15, textColor=INK)
 SMALL = ParagraphStyle('Small', parent=BODY, fontSize=9, leading=12)
-TOTAL_PAGES = 9
+TOTAL_PAGES = 13
+LIVE_APP_URL = 'https://sf-rec-park-analytics.streamlit.app/'
+GITHUB_URL = 'https://github.com/sileshith/sf-rec-park-analytics'
+SCREENSHOT_DATE = '2026-10-23'
+VISUALS = [
+    ('Executive Summary', 'executive-summary.png', 'visual-executive',
+     'The executive view summarizes the full synthetic snapshot, with all category, zone, and status filters selected.',
+     'Read resolved turnaround separately from pending age. The revenue figure is modeled collection on approval, not an observed department receipt. Backlog is rounded to two decimals on screen; the precise full-snapshot value is 1.325%.'),
+    ('Throughput & Bottlenecks', 'throughput-bottlenecks.png', 'visual-throughput',
+     'The category comparison shows completed turnaround alongside pending age. All four synthetic permit categories are included.',
+     'Longer special-event reviews are a generator assumption. This comparison is descriptive of modeled records. The active queue below the chart flags pending records strictly past their assumed category targets.'),
+    ('Permit Explorer', 'permit-explorer.png', 'visual-explorer',
+     'The record explorer shows the full 12,000-record selection with an empty ID search and the overdue-only toggle off.',
+     'Application dates define the selected cohort. Recent records at the snapshot can remain pending, with blank decision fields. Search and sorting affect the explorer and its CSV export, while the sidebar filters affect all analysis tabs.'),
+    ('Facility Demand Map', 'facility-demand.png', 'visual-map',
+     'The map displays assigned synthetic permit counts at authentic DataSF property coordinates. All sidebar filters are selected.',
+     'Bubble area represents assigned count. Colors identify invented analytical zones, not official districts. The stable allocation is not evidence of real bookings, category eligibility, capacity, or utilization. Basemap attribution: OpenStreetMap contributors.'),
+]
 CONTENTS = [
     ('Abstract', 'abstract', 2), ('Motivation and urban context', 'motivation', 3),
     ('Problem statement', 'problem', 3), ('Methodology and architecture', 'method', 4),
@@ -37,7 +55,11 @@ CONTENTS = [
     ('SLA framework and metric definitions', 'sla', 6),
     ('Limitations', 'limitations', 7), ('Conclusions', 'conclusions', 7),
     ('Recommendations', 'recommendations', 7), ('Appendix: facility reference', 'appendix', 8),
-    ('Sources and reproducibility', 'sources', 9),
+    ('Sources, deployment and reproducibility', 'sources', 9),
+    ('Visual appendix: executive summary', 'visual-executive', 10),
+    ('Visual appendix: throughput and bottlenecks', 'visual-throughput', 11),
+    ('Visual appendix: permit explorer', 'visual-explorer', 12),
+    ('Visual appendix: facility demand map', 'visual-map', 13),
 ]
 
 
@@ -119,6 +141,20 @@ class Report:
             self.c.setFont('Times-Roman', 9)
             self.c.drawCentredString(x + width / 2, y + 15, label)
         self.y = y - 20
+
+    def screenshot(self, path):
+        """Embed the original captured pixels at their aspect ratio, linked to the app."""
+        image = ImageReader(str(path))
+        width, height = image.getSize()
+        rendered_height = WIDTH * height / width
+        if self.y - rendered_height < 64:
+            raise ValueError('Screenshot would overflow its appendix page')
+        bottom = self.y - rendered_height
+        self.c.drawImage(image, LEFT, bottom, width=WIDTH, height=rendered_height, mask='auto')
+        self.c.setStrokeColor(colors.HexColor('#d1daea'))
+        self.c.rect(LEFT, bottom, WIDTH, rendered_height, fill=0, stroke=1)
+        self.c.linkURL(LIVE_APP_URL, (LEFT, bottom, LEFT+WIDTH, self.y), relative=0, thickness=0)
+        self.y = bottom - 18
 
     def finish_page(self):
         c = self.c
@@ -230,9 +266,11 @@ def build_report(database, output, author='Sileshi Hirpa', report_date='2026-10-
         rows.append([f'{site.source_property_id}: {site.facility_name}', f'{site.latitude:.6f}', f'{site.longitude:.6f}', site.district_zone])
     r.table(rows, [245,75,85,WIDTH-405], small=True)
     r.paragraph(f'Source: <link href="{SOURCE_URL}" color="#213e89">DataSF Recreation and Parks Properties (gtr9-ntp6)</link>. Retrieved {RETRIEVED_DATE}. Source precision is preserved in the bundled CSV; coordinates above are rounded to six decimals.', SMALL)
+    r.paragraph(f'Explore the deployed facility map in the <link href="{LIVE_APP_URL}" color="#213e89">live dashboard</link>; source records and allocation code are in the <link href="{GITHUB_URL}" color="#213e89">public GitHub repository</link>. The visual appendix begins on page 10.', SMALL)
     r.finish_page()
     # 9. Provenance and reproducibility.
-    r.heading('Sources & Reproducibility', 'sources')
+    r.heading('Sources, Deployment & Reproducibility', 'sources')
+    r.paragraph(f'<b>Live dashboard:</b> <link href="{LIVE_APP_URL}" color="#213e89">{LIVE_APP_URL}</link><br/><b>Public source repository:</b> <link href="{GITHUB_URL}" color="#213e89">{GITHUB_URL}</link><br/>Public access and deployed views verified on {SCREENSHOT_DATE}.')
     r.paragraph(f'<b>Public reference data:</b> <link href="{SOURCE_URL}" color="#213e89">DataSF Recreation and Parks Properties</link>. The inventory describes land owned and/or maintained by the department. A 19-record excerpt is preserved with the retrieval date and full-download hash. The catalog lists PDDL 1.0 for the source data; repository code is MIT licensed.')
     r.paragraph('<link href="https://catalog.data.gov/dataset/recreation-and-parks-properties" color="#213e89">Data.gov catalog and source metadata</link><br/><link href="https://opendatacommons.org/licenses/pddl/1-0/" color="#213e89">Public Domain Dedication and License 1.0</link><br/><link href="https://docs.streamlit.io/" color="#213e89">Streamlit documentation</link><br/><link href="https://docs.reportlab.com/" color="#213e89">ReportLab documentation</link>')
     r.paragraph('<b>Transaction provenance:</b> data/permits.manifest.json records generator parameters and NumPy/Pandas versions. For exact synthetic regeneration, use those recorded versions. Application dependency ranges permit updates; the committed CSV and database are the stable portfolio snapshot.')
@@ -240,8 +278,19 @@ def build_report(database, output, author='Sileshi Hirpa', report_date='2026-10-
     r.paragraph(meta['source_sha256'], ParagraphStyle('Hash', fontName='Courier', fontSize=8, leading=11), gap=18)
     r.paragraph('<b>Rebuild from repository root:</b><br/>1. Install requirements.txt and requirements-report.txt.<br/>2. Run python etl.py to validate and rebuild SQLite from the committed CSV.<br/>3. Run python -m unittest discover -s tests -v.<br/>4. Run python generate_report.py.<br/>5. Run streamlit run app.py to inspect the same snapshot.')
     r.paragraph('<b>Dashboard coverage:</b> Executive summary; throughput and bottlenecks; filterable record explorer; illustrative facility demand map; SLA framework and definitions. Filters use application dates and apply to all analysis tabs. Map tiles require internet; SQLite and reference tables are local.')
-    r.paragraph('<b>Deployment status:</b> Docker and Compose configurations are included for local hosting. A GitHub Actions workflow runs tests and builds the report. These files do not prove a cloud deployment or successful remote CI run; public hosting remains a publication step.')
+    r.paragraph('<b>Deployment status:</b> The dashboard is publicly deployed on Streamlit Community Cloud from main / app.py using Python 3.11. The bundled SQLite snapshot loads without a cloud ETL job. GitHub Actions has passed on Python 3.11 and 3.12, including the report build. Docker configurations remain available but container execution has not been verified. Inactive cloud apps may require a short wake-up period.')
     r.finish_page()
+    # 10-13. Fresh captures of the deployed public dashboard.
+    for number, (title, filename, anchor, caption, guide) in enumerate(VISUALS, 1):
+        r.heading(f'Visual Appendix {number}: {title}', anchor)
+        r.paragraph(f'Captured from the public deployment on {SCREENSHOT_DATE}. All permit records are synthetic.', SMALL)
+        r.screenshot(ROOT/'assets/screenshots/deployed'/filename)
+        r.paragraph(f'<b>Figure {number}.</b> {caption}')
+        r.heading('How to read this view')
+        r.paragraph(guide)
+        r.paragraph(f'<b>Live view:</b> <link href="{LIVE_APP_URL}" color="#213e89">{LIVE_APP_URL}</link><br/><b>Source and reproducibility:</b> <link href="{GITHUB_URL}" color="#213e89">GitHub repository</link>', SMALL)
+        r.paragraph(f'Original image: assets/screenshots/deployed/{filename}. Capture provenance and SHA-256 values are recorded in capture_manifest.json in that directory. Click the screenshot to open the live application.', SMALL)
+        r.finish_page()
     c.save()
     return k
 
