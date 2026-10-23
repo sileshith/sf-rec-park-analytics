@@ -10,6 +10,8 @@ import plotly.express as px
 
 from appendix_data import attach_facilities, facility_demand, facilities_frame, SOURCE_URL, RETRIEVED_DATE
 
+REPORT_PATH = Path(__file__).resolve().parent / 'reports/sf_rec_park_project_report.pdf'
+
 DB_PATH = Path(os.environ.get('PERMITS_DATABASE', str(Path(__file__).parent / 'data/permits.sqlite')))
 
 
@@ -107,6 +109,18 @@ def main():
         st.stop()
     st.caption(f"Snapshot: {metadata['snapshot_date']} • {len(df):,} permits • Calendar-day model")
     with st.sidebar:
+        st.header('Project report')
+        try:
+            report_bytes = REPORT_PATH.read_bytes()
+        except OSError:
+            st.caption('The PDF report is temporarily unavailable.')
+        else:
+            st.download_button(
+                '📄 Download Final PDF Report', data=report_bytes,
+                file_name='sf_rec_park_project_report.pdf', mime='application/pdf',
+                key='final_pdf_report', on_click='ignore', width='stretch',
+            )
+            st.caption('13-page report with results, deployed views, and live links. Uses the full snapshot, independent of filters.')
         st.header('Filter permits')
         st.caption('Filters apply to all analysis tabs. Dates refer to applications, not decisions.')
         dates = st.date_input('Application date range',

@@ -135,6 +135,10 @@ SELECT * FROM monthly_throughput ORDER BY decision_month;
 
 ### Executive summary
 
+Reviewers can use **Download Final PDF Report** at the top of the sidebar to
+download the bundled 13-page report. This PDF covers the complete snapshot and
+does not change with dashboard filters.
+
 Icon cards show selected volume, resolved turnaround, full-precision revenue, and
 pending backlog. Charts show status counts, category revenue, and decisions by
 month. Monthly decisions belong to the selected application cohort.
