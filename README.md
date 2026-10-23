@@ -192,10 +192,11 @@ priority label alone does not create customer-based governance.
 
 ## Installation and local execution
 
-Use Python 3.11 or 3.12. From the permanent workspace:
+Use Python 3.11 or 3.12. Clone the public repository:
 
 ```sh
-cd /Users/sileshihirpa/Desktop/ASU/projects/sf-rec-park-analytics
+git clone https://github.com/sileshith/sf-rec-park-analytics.git
+cd sf-rec-park-analytics
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
@@ -266,14 +267,15 @@ environment because Docker is unavailable there.
 
 ### Streamlit Community Cloud
 
-Cloud publication is pending. After publishing this repository to your own GitHub
-account, create a Streamlit Community Cloud app, choose the repository and branch,
-and set the entrypoint to `app.py`. The committed database and production
-requirements are sufficient to start the dashboard without a cloud ETL job.
-Replace the pending badge with the actual app link only after verifying deployment.
-No secrets are needed for this demonstration. The supplied GitHub Actions workflow
-runs tests on Python 3.11 and 3.12 and rebuilds the report; remote CI status remains
-unverified until it runs in GitHub.
+The [public GitHub repository](https://github.com/sileshith/sf-rec-park-analytics)
+is published. Streamlit Community Cloud deployment is awaiting account sign-in;
+the deployment badge remains pending until a live app is verified.
+
+Deploy using repository `sileshith/sf-rec-park-analytics`, branch `main`, entrypoint
+`app.py`, and Python 3.11 or 3.12 in advanced settings. The committed database and
+production requirements start the dashboard without a cloud ETL job. No secrets
+are needed for this demonstration. The [initial GitHub Actions run](https://github.com/sileshith/sf-rec-park-analytics/actions/runs/39988379923)
+passed on Python 3.11 and 3.12, including all tests and the PDF rebuild.
 
 ## Repository structure
 
